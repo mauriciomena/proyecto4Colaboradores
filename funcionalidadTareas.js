@@ -5,14 +5,19 @@ let concesionaria = {
   autos: operacionesArchivo.leerArchivoJson(),
 
   listar: function() {
-      // cuando se llama a este metodo se imprimen todos los autos en autos.json
-      //  ISABELLA 
-      console.log(this.autos);
+    // Isabella
+    // cuando se llama a este metodo se imprimen todos los autos en autos.json
+    console.log(this.autos);
   },
 
   buscarAuto: function(patenteBuscada) {
     // cuando se llama a este metodo se imprimen todos los datos del auto con la patente inresada. Sino esta, devuelve null
-    //  ISABELLA 
+    console.log('========================')
+    console.log('Buscando el auto de patente '+patenteBuscada)
+    console.log('========================')
+    autoBuscado = this.autos.filter(auto => auto.patente === patenteBuscada)[0];
+    return autoBuscado != undefined ? autoBuscado : null;
+
   },
   venderAuto: function(patenteBuscada) {
     // cuando se llama a este metodo se sobrescribe el objeto de autos, cambiando este auto en particular a vendido
